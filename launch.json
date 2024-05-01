@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "API Server",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "0.0.0.0:8000"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "windows": {
+                "program": "${workspaceFolder}\\manage.py"
+            }
+        },
+        {
+            "name": "Test",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "test"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/manage.py",
+            "windows": {
+                "program": "${workspaceFolder}\\manage.py",
+                "rules": [
+                    {"path": "${workspaceFolder}\\manage.py", "include": false}
+                ]
+            },
+            "purpose": ["debug-test"],
+            "rules": [
+                {"path": "${workspaceFolder}/manage.py", "include": false}
+            ]
+        }
+    ]
+}
